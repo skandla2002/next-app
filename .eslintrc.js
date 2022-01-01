@@ -48,6 +48,7 @@ module.exports = {
       "ignorePackages",
       { js: "never", jsx: "never", ts: "never", tsx: "never" }, // import 시 확장자 명은 사용하지 않음
     ],
+    "linebreak-style": 0, // 마지막 문장 닫힘(CRLF 방식)
   },
   settings: {
     "import/resolver": {
