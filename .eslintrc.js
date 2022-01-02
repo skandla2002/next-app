@@ -14,10 +14,10 @@ module.exports = {
   plugins: ["react"],
   rules: {
     quotes: ["error", "double"],
-    "@typescript-eslint/quotes": ["error", "double"], // 더블 쿼터 사용
+    // "@typescript-eslint/quotes": ["error", "double"], // 더블 쿼터 사용
     "no-unused-vars": "off", // 사용 안한 변수 경고 중복
     "spaced-comment": "off", // 주석을 뒤에 쓰지 말라는 경고
-    "@typescript-eslint/no-unused-vars": "warn", // 사용 안 한 변수는 경고
+    // "@typescript-eslint/no-unused-vars": "warn", // 사용 안 한 변수는 경고
     "jsx-a11y/control-has-associated-label": "off", // 상호작용 하는 엘리먼트에 label을 넣는다.
     "react/no-array-index-key": "off", // key 값으로 index를 사용 할 수 있다.
     "react/no-unescaped-entities": "off", // 문자열 내에서 " ' > } 허용
@@ -48,6 +48,7 @@ module.exports = {
       "ignorePackages",
       { js: "never", jsx: "never", ts: "never", tsx: "never" }, // import 시 확장자 명은 사용하지 않음
     ],
+    "linebreak-style": 0, // 마지막 문장 닫힘(CRLF 방식)
   },
   settings: {
     "import/resolver": {
