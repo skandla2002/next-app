@@ -1,27 +1,25 @@
-import Link from "next/link";
-
-function Child() {
-  return <div>Child</div>;
-}
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 function App() {
+  const [name, setName] = useState("");
+  const router = useRouter();
   return (
     <div>
-      <h2>Link to 'tomato'</h2>
-      {/* <Link href="/tomato"> */}
-      {/* a tag가 있어야 클릭도 되고 history 저정되어 백스페이스바로 선택 가능함 */}
-      {/* <a>Move to '/tomato'</a> */}
-      {/* 컴포넌트가 내부에 있는 경우는 동작하지 않음  */}
-      {/* <Child />  */}
-      {/* 일반 태그는 동작함 */}
-      {/* <div>tag</div> */}
-      {/* <a> Move to '/tomato'</a>
-      </Link> */}
-      <Link href="/vegetable/potato" as="/vegetable/potato">
-        <a> Move to '/vegetable/potato'</a>
-      </Link>
+      <button type="button" onClick={() => router.push("/tomato")}>
+        tomato로 가기
+      </button>
+      <p>이름</p>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        style={{ marginRight: "12px" }}
+      />
+      <button type="button" onClick={() => router.push(`/vegetable/${name}`)}>
+        {/* push 함수: 1. pathname, 2. asPath, 3. options를 전달 가능함 */}
+        {name}으로 가기
+      </button>
     </div>
   );
 }
-
 export default App;
