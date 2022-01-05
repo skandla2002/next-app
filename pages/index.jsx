@@ -1,5 +1,14 @@
+import Link from "next/link";
+
 function App() {
-  console.log(document);
-  return <div>Hello Next.js!!</div>;
+  return (
+    <div>
+      <h2>Link to 'tomato'</h2>
+      <Link href="/tomato">
+        <a>Move to '/tomato'</a>
+      </Link>
+    </div>
+  );
 }
+
 export default App;
