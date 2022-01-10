@@ -5,13 +5,12 @@ const name = ({ user }) => {
   return <div>{username}</div>;
 };
 
-export const getSererSideProps = async ({ query }) => {
+name.getInitialProps = async ({ query }) => {
   console.log(query);
   const { name } = query;
   try {
     const res = await fetch(`https://api.github.com/users/${name}`);
     if (res.status === 200) {
-      console.log(res);
       const user = await res.json();
       return { props: { user } };
     }
